@@ -5,7 +5,7 @@ $ sudo yum install https://repo.percona.com/yum/percona-release-latest.noarch.rp
 ```
 2. Enable the repository:
 ```
-$ sudo percona-release setup ps-80
+$ sudo percona-release setup ps80
 ```
 3. Install the packages
 ```
