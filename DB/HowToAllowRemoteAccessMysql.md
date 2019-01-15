@@ -115,3 +115,8 @@ mysql>CREATE DATABASE IF NOT EXISTS my_db default charset utf8 COLLATE utf8_gene
 ```
 注意后面这句话 "COLLATE utf8_general_ci",大致意思是在排序时根据utf8变码格式来排序 
 那么在这个数据库下创建的所有数据表的默认字符集都会是utf8了 
+
+#### 开启防火墙端口 centos7：
+```
+firewall-cmd --zone=public --add-port=3306/tcp --permanent
+```
