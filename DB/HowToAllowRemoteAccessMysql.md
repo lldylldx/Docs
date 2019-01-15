@@ -109,3 +109,9 @@ mysql> flush privileges;
 ```
 mysql-connector-java-5.1.46-bin.jar 点击打开链接
 ```
+#### 创建数据库表 utf8
+```
+mysql>CREATE DATABASE IF NOT EXISTS my_db default charset utf8 COLLATE utf8_general_ci; 
+```
+注意后面这句话 "COLLATE utf8_general_ci",大致意思是在排序时根据utf8变码格式来排序 
+那么在这个数据库下创建的所有数据表的默认字符集都会是utf8了 
