@@ -105,3 +105,7 @@ mysql> UPDATE user SET Password=password("123") WHERE user='root' and host='%’
  
 mysql> flush privileges; 
 ```
+#### MySQL的Java驱动
+```
+mysql-connector-java-5.1.46-bin.jar 点击打开链接
+```
