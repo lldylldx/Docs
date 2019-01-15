@@ -1,6 +1,11 @@
 #### 安装JDK
 
 配置java环境变量
+计算机--属性--高级系统设置--环境变量
+```
+PENTAHO_JAVA_HOME
+```
+对应的Java jdk的安装目录
 
 #### 安装KETTLE：
 
