@@ -32,7 +32,9 @@ managed=true
 进入桌面后右上角设置加入网络
 
 6. Useful Link:
+
 [WikiDevi](https://wikidevi.com/w/index.php?title=Category:TP-LINK&pagefrom=TP-LINK+TGR1900+%28Google+OnHub%29#mw-pages)
+[CentOS 7 Realtek 8192cu WIFI网卡驱动配置](https://blog.csdn.net/qwddn12/article/details/49936265)
 
 7. TP-LINK TL-WN826N 无线网卡芯片组
 ```
