@@ -33,3 +33,10 @@ managed=true
 
 6. Useful Link:
 [WikiDevi](https://wikidevi.com/w/index.php?title=Category:TP-LINK&pagefrom=TP-LINK+TGR1900+%28Google+OnHub%29#mw-pages)
+
+7. TP-LINK TL-WN826N 无线网卡芯片组
+```
+TP-LINK TL-WN826N USB 300M无线网卡。
+芯片：Realtek RTL8192CU
+接口：USB 2.0
+```
