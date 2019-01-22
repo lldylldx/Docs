@@ -42,4 +42,12 @@ $ git checkout master
 $ git checkout branchB
 $ git merge --no-ff branchA
 ```
+<<<<<<< HEAD
+=======
+
+5. 为本地branch设置远程同步branch
+```
+git branch --set-upstream-to=origin/branchA branchLocal
+```
+>>>>>>> myMac
 #### Markdown 用法
