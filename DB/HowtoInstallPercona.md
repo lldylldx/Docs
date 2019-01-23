@@ -46,6 +46,8 @@ SHOW ENGINE INNODB STATUS
 ```
 
 ## Install MariaDB repo
+Copy and paste it into a file under /etc/yum.repos.d/ (we suggest naming the file MariaDB.repo or something similar). 
+
 ```
 # MariaDB 10.0 CentOS repository list - created 2019-01-23 07:40 UTC
 # http://downloads.mariadb.org/mariadb/repositories/
