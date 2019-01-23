@@ -44,3 +44,14 @@ rm -f /etc/my.cnf
 ```
 SHOW ENGINE INNODB STATUS
 ```
+
+## Install MariaDB repo
+```
+# MariaDB 10.0 CentOS repository list - created 2019-01-23 07:40 UTC
+# http://downloads.mariadb.org/mariadb/repositories/
+[mariadb]
+name = MariaDB
+baseurl = http://yum.mariadb.org/10.0/centos7-amd64
+gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
+gpgcheck=1
+```
