@@ -57,3 +57,23 @@ baseurl = http://yum.mariadb.org/10.0/centos7-amd64
 gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
 gpgcheck=1
 ```
+## How to uninstall MariaDB
+
+```
+ centos 7 卸载 mariadb 的正确命令
+
+#列出所有被安装的rpm package
+rpm -qa | grep mariadb
+
+#卸载
+
+rpm -e mariadb-libs-5.5.37-1.el7_0.x86_64
+
+错误：依赖检测失败：
+        libmysqlclient.so.18()(64bit) 被 (已安裝) postfix-2:2.10.1-6.el7.x86_64 需要
+        libmysqlclient.so.18(libmysqlclient_18)(64bit) 被 (已安裝) postfix-2:2.10.1-6.el7.x86_64 需要
+
+#强制卸载，因为没有--nodeps
+
+　　rpm -e --nodeps mariadb-libs-5.5.37-1.el7_0.x86_64
+ ```
