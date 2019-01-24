@@ -120,3 +120,10 @@ mysql>CREATE DATABASE IF NOT EXISTS my_db default charset utf8 COLLATE utf8_gene
 ```
 firewall-cmd --zone=public --add-port=3306/tcp --permanent
 ```
+#### 修改
+
+```
+mysql> ALTER USER'root'@'%'IDENTIFIED WITH mysql_native_password BY 'password';
+
+mysql> FLUSHPRIVILEGES;
+```
