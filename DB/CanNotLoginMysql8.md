@@ -80,3 +80,83 @@ mysql> grant all privileges on *.* to joe@10.163.225.87 identified by ‘123′;
 ```
 mysql> grant all privileges on *.* to joe@localhost identified by ‘123′;
 ```
+#####################################################################
+1. 停止mysql数据库
+/etc/init.d/mysqld stop
+
+2. 执行如下命令
+mysqld_safe --user=mysql --skip-grant-tables --skip-networking &
+
+3. 使用root登录mysql数据库
+mysql -u root mysql
+
+4. 更新root密码
+mysql> UPDATE user SET Password=PASSWORD('newpassword') where USER='root';
+#最新版MySQL请采用如下SQL：
+mysql> UPDATE user SET authentication_string=PASSWORD('newpassword') where USER='root';
+
+5. 刷新权限
+mysql> FLUSH PRIVILEGES;
+
+6. 退出mysql
+mysql> quit
+
+7. 重启mysql
+/etc/init.d/mysqld restart
+
+8. 使用root用户重新登录mysql
+mysql -uroot -p
+Enter password: <输入新设的密码newpassword>
+
+#### 另一种ssh登陆的方法
+```
+（1）SSH登录root管理员账户
+
+（2）登录MySql
+
+# mysql -u root -p
+Enter password:
+（3）执行授权命令
+
+mysql> grant all privileges on *.* to root@'localhost' identified by '密码';
+mysql> flush privileges;
+或
+
+mysql> grant all privileges on *.* to root@'%' identified by '密码';
+mysql> flush privileges;
+（4）退出再试
+
+mysql> quit
+Bye
+（5）再次登录
+
+然后，问题就解决了~
+```
+#### 修改my.cnf, 绕过密码输入
+```
+# vi /etc/my.cnf
+
+[mysqld]
+default_authentication_plugin = mysql_native_password
+```
+#### mysql slave 复制冲突的解决
+
+监控发现 mysql slave 延迟了不少，登陆mysql slave 查看复制状态
+```
+mysql> show slave status\G
+```
+会有类似的错误提示 Slave:Error “Duplicate entry ‘1’ for key 1” on query…..
+
+再查看master 的 status，验证下
+```
+mysql> show master status;
+```
+在 mysql slave 上设置
+```
+mysql> stop slave;
+mysql> set global sql_slave_skip_counter=1;
+mysql> start slave;
+```
+如果仍然提示错误，重复上面的步骤
+
+[有用的链接1:](https://blog.csdn.net/lhl1124281072/article/details/80277163)
